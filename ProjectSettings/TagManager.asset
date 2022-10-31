@@ -6,6 +6,8 @@ TagManager:
   tags:
   - EnemySpawner
   - Enemy
+  - EnemyProjectile
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - EnemyProjectile
+  - Player
+  - Enemy
   - 
   - 
   - 

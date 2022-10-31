@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] float spawnCooldown;
     [SerializeField] float spawnDistance;
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject[] enemies;
 
     void Start()
     {
@@ -15,7 +15,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        Instantiate(enemy, GetSpawnPoint(), Quaternion.identity);
+        int i = Random.Range(0, enemies.Length);
+        Instantiate(enemies[i], GetSpawnPoint(), Quaternion.identity);
     }
 
     private Vector3 GetSpawnPoint()
@@ -23,7 +24,12 @@ public class EnemySpawner : MonoBehaviour
         Vector3 spawnDirection = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized;
 
         Vector3 finalSpawnPoint = new Vector3(0,0,0) + (spawnDirection * spawnDistance);
-        finalSpawnPoint.y = ARController.floorHeight;
+
+        if (ARController.floorHeight != 0)
+            finalSpawnPoint.y = ARController.floorHeight;
+        else
+            finalSpawnPoint.y = -0.5f;
+
         Debug.Log("Enemy Spawn Found");
         return finalSpawnPoint;
     }

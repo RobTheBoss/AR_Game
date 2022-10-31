@@ -18,6 +18,7 @@ public class ARController : MonoBehaviour
     void Start()
     {
         gameState = GameState.Setup;
+        floorHeight = 0;
     }
 
     // Update is called once per frame
@@ -62,7 +63,8 @@ public class ARController : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
                 {
-                    if (hit.transform.gameObject.CompareTag("Enemy"))
+                    if (hit.transform.gameObject.CompareTag("Enemy")
+                        || hit.transform.gameObject.CompareTag("EnemyProjectile"))
                     {
                         Destroy(hit.transform.gameObject);
                     }
