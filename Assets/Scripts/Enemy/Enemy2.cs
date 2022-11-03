@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Enemy2 : Enemy
 {
-    public float shotCooldown;
     public GameObject projectilePrefab;
-    private float initialCooldown = 3.0f;
+    public Transform projectileSpawnPoint;
+    //public float shotCooldown;
+    //private float initialCooldown = 3.0f;
 
     override protected void Start()
     {
         base.Start();
-        InvokeRepeating("Attack", initialCooldown, shotCooldown);
         transform.LookAt(Camera.main.transform.position);
     }
 
@@ -22,6 +22,6 @@ public class Enemy2 : Enemy
 
     override protected void Attack()
     {
-        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
     }
 }
