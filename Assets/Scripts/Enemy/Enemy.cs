@@ -6,6 +6,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public float speed;
+    public int health;
     protected Transform target;
     protected Rigidbody rb;
 
@@ -37,5 +38,14 @@ public abstract class Enemy : MonoBehaviour
         movedir.Normalize();
 
         rb.velocity = movedir * speed;
+        transform.rotation = Quaternion.LookRotation(movedir);
+    }
+
+    public void TakeDamage(int damage_)
+    {
+        health -= damage_;
+
+        if (health <= 0)
+            Destroy(gameObject);
     }
 }

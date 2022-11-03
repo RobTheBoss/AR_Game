@@ -23,13 +23,7 @@ public class DamageTaken : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")
             || collision.gameObject.CompareTag("EnemyProjectile"))
         {
-            Time.timeScale = 0;
-            Invoke("Restart", 1);
+            //Do something here
         }
-    }
-
-    void Restart()
-    {
-        Application.Quit();
     }
 }

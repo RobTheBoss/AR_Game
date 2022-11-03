@@ -11,13 +11,13 @@ public class ARController : MonoBehaviour
     public GameObject spawnerObject;
     static public float floorHeight;
 
-    private enum GameState { Setup, InGame};
-    GameState gameState;
+    public enum GameState { Setup, InGame};
+    public GameState gameState;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameState = GameState.Setup;
+        gameState = GameState.InGame;
         floorHeight = 0;
     }
 
@@ -48,26 +48,6 @@ public class ARController : MonoBehaviour
                     //enemies now spawn and state of game changes
                     spawnerObject.SetActive(true);
                     gameState = GameState.InGame;
-                }
-            }
-        }
-
-        else if (gameState == GameState.InGame)
-        {
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began 
-                || Input.GetMouseButtonDown(0))
-            {
-                Debug.DrawLine(Camera.main.transform.position, 
-                    Camera.main.transform.position + (Camera.main.transform.forward * 30), Color.red, 5.0f);
-
-                RaycastHit hit;
-                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
-                {
-                    if (hit.transform.gameObject.CompareTag("Enemy")
-                        || hit.transform.gameObject.CompareTag("EnemyProjectile"))
-                    {
-                        Destroy(hit.transform.gameObject);
-                    }
                 }
             }
         }

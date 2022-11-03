@@ -12,6 +12,7 @@ public class Enemy2 : Enemy
     {
         base.Start();
         InvokeRepeating("Attack", initialCooldown, shotCooldown);
+        transform.LookAt(Camera.main.transform.position);
     }
 
     override protected void Update()
