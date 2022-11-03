@@ -1032,8 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eeea3d2f93cd7943b50a6fc4c6ddf45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testObject: {fileID: 7423722545267603595, guid: d84e98f398280534c807a31152758533,
-    type: 3}
+  gun: {fileID: 8831246811477049318}
   raycastManager: {fileID: 388525033}
   planeManager: {fileID: 388525032}
   spawnerObject: {fileID: 1676038173}
@@ -1364,7 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10e9717a3ff5945b0abd42c07599a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCooldown: 5
+  spawnCooldown: 7
   spawnDistance: 25
   enemies:
   - {fileID: 1735082364119560400, guid: f8a593b7bfa956349b7673b01b9474a5, type: 3}
@@ -2325,7 +2324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8831246811477049319
 MonoBehaviour:
   m_ObjectHideFlags: 0

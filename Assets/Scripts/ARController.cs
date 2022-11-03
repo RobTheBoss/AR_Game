@@ -5,7 +5,7 @@ using UnityEngine.XR.ARFoundation;
 
 public class ARController : MonoBehaviour
 {
-    public GameObject testObject;
+    public GameObject gun;
     public ARRaycastManager raycastManager;
     public ARPlaneManager planeManager;
     public GameObject spawnerObject;
@@ -32,10 +32,9 @@ public class ARController : MonoBehaviour
 
                 Vector2 screenPosition = Camera.main.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
                 raycastManager.Raycast(screenPosition, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
-                if (hits.Count > 0) //pressed a plane
+                if (hits.Count > 0) //hit a plane
                 {
                     //Floor height setup done
-                    Instantiate(testObject, hits[0].pose.position, hits[0].pose.rotation);
                     floorHeight = hits[0].pose.position.y;
 
                     //hides all planes and stops creating more
@@ -48,6 +47,7 @@ public class ARController : MonoBehaviour
                     //enemies now spawn and state of game changes
                     spawnerObject.SetActive(true);
                     gameState = GameState.InGame;
+                    gun.SetActive(true);
                 }
             }
         }
