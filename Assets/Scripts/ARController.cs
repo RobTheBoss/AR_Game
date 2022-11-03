@@ -17,7 +17,7 @@ public class ARController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameState = GameState.InGame;
+        gameState = GameState.Setup;
         floorHeight = 0;
     }
 
