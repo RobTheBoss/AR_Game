@@ -2341,7 +2341,7 @@ MonoBehaviour:
   ammoText: {fileID: 1065853502}
   anim: {fileID: 8831246811477049320}
   damage: 5
-  reloadTime: 2
+  reloadTime: 2.5
   totalAmmo: 8
 --- !u!95 &8831246811477049320
 Animator:
