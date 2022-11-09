@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
-public abstract class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float speed;
     public int health;
+
+    public static int enemyKillCount;
+    public TextMeshProUGUI enemyKillsText;
+
     protected Transform target;
     protected Rigidbody rb;
 
@@ -46,6 +51,9 @@ public abstract class Enemy : MonoBehaviour
         health -= damage_;
 
         if (health <= 0)
+        {
+            enemyKillCount++;
             Destroy(gameObject);
+        }
     }
 }

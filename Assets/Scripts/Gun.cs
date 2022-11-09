@@ -7,6 +7,8 @@ public class Gun : MonoBehaviour
 {
     public ARController controller;
     public TextMeshProUGUI ammoText;
+    public TextMeshProUGUI enemyKillsText;
+
     public Animator anim;
 
     public int damage;
@@ -19,6 +21,7 @@ public class Gun : MonoBehaviour
     void Start()
     {
         ammo = totalAmmo;
+        ammoText.text = "Ammo: " + ammo.ToString();
     }
 
     // Update is called once per frame
@@ -34,6 +37,8 @@ public class Gun : MonoBehaviour
             Invoke("ReloadGun", reloadTime);
             return;
         }
+
+        enemyKillsText.text = "Enemies Killed: " + Enemy.enemyKillCount.ToString();
 
         //tapped the screen
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began
