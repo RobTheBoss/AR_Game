@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public TextMeshProUGUI healthText;
     public GameObject gameOverCanvas;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
             health -= 1;
             healthText.text = "Health: " + health.ToString();
             healTimer = healCooldown;
+            anim.SetTrigger("Hurt");
         }
     }
 }
