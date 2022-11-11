@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 8852690674282653401}
   - component: {fileID: 1817132892400026794}
   - component: {fileID: 1456282666604216048}
-  - component: {fileID: 6592580411042941831}
   - component: {fileID: -3514738691795240235}
   m_Layer: 8
   m_Name: Enemy2
@@ -164,25 +163,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   health: 10
+  enemyKillsText: {fileID: 0}
   projectilePrefab: {fileID: 4487770197694482048, guid: ece84faa59e1c5d4eaf267094479b067,
     type: 3}
   projectileSpawnPoint: {fileID: 7188056325277931333}
---- !u!111 &6592580411042941831
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3652346943091470983}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: -203655887218126122, guid: 403c8f58721ded64bb32210ba803a3ad,
-    type: 3}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &-3514738691795240235
 Animator:
   serializedVersion: 4

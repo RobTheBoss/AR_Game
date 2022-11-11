@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(movedir);
     }
 
-    public void TakeDamage(int damage_)
+    public virtual void TakeDamage(int damage_)
     {
         health -= damage_;
 

@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10e9717a3ff5945b0abd42c07599a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCooldown: 7
+  spawnCooldown: 5
   spawnDistance: 23
   enemies:
   - {fileID: 1735082364119560400, guid: f8a593b7bfa956349b7673b01b9474a5, type: 3}
